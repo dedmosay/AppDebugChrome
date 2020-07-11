@@ -3,6 +3,8 @@ const num1 = document.querySelector('#num1')
 const num2 = document.querySelector('#num2')
 const addBtn = document.querySelector('#add')
 const subBtn = document.querySelector('#sub')
+const mulBtn = document.querySelector('#mul')
+const divBtn = document.querySelector('#div')
 const output = document.querySelector('#output')
 
 
@@ -57,11 +59,23 @@ function subHandler() {
     console.trace()
 }
 
+function mulHandler() {
+    const values = getInputValues()
+    displayResult(values[0] * values[1])
+}
+
+function divHandler() {
+    const values = getInputValues()
+    displayResult(values[0] / values[1])
+}
+
 function displayResult(result) {
     output.innerHTML = `Результат = ${result}`
 }
 
 addBtn.addEventListener('click', addHandler)
 subBtn.addEventListener('click', subHandler)
+mulBtn.addEventListener('click', mulHandler)
+divBtn.addEventListener('click', divHandler)
 // })
 
